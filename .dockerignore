@@ -1,0 +1,12 @@
+# Keep the build context to sources only: never ship local data or host-built modules.
+**/node_modules
+**/dist
+**/data
+**/*.sqlite*
+**/*.tsbuildinfo
+**/.env
+**/.env.*
+.git
+.github
+**/.DS_Store
+**/*.log

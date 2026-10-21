@@ -1,0 +1,23 @@
+services:
+  sym-albums:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: sym-albums:latest
+    container_name: sym-albums
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      TZ: ${TZ:-UTC}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      THUMB_CONCURRENCY: ${THUMB_CONCURRENCY:-8}
+      # Lets symlinks point at the real host path instead of /photos.
+      HOST_PHOTOS_ROOT: ${PHOTOS_ROOT}
+    volumes:
+      - ${PHOTOS_ROOT:?set PHOTOS_ROOT in .env}:/photos:ro
+      - ${ALBUMS_ROOT:?set ALBUMS_ROOT in .env}:/albums:rw
+      - sym-albums-data:/data
+
+volumes:
+  sym-albums-data:

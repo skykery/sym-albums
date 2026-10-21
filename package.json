@@ -1,0 +1,12 @@
+{
+  "name": "sym-albums",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev:server": "pnpm --filter @sym-albums/server dev",
+    "dev:web": "pnpm --filter @sym-albums/web dev",
+    "build": "pnpm --filter @sym-albums/web build && pnpm --filter @sym-albums/server build",
+    "start": "pnpm --filter @sym-albums/server start"
+  }
+}
