@@ -7,6 +7,10 @@ place, the album is just a folder full of `symlink → original` entries.
 Mobile-first web UI, runs on the same machine as your photos, LAN-only by
 default (no auth). RAW files are ignored on purpose.
 
+<p align="center">
+  <img src="docs/screenshot-albums.webp" alt="Albums page on a phone" width="320">
+</p>
+
 ## What's in here
 
 ```
