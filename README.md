@@ -25,7 +25,7 @@ docker compose -f docker/docker-compose.yml up --build -d
 
 Or skip the build and use the published image (amd64 + arm64): replace the
 `build:` block in `docker/docker-compose.yml` with
-`image: ghcr.io/<owner>/sym-albums:latest`.
+`image: ghcr.io/skykery/sym-albums:latest`.
 
 The container runs as UID 1000, so `ALBUMS_ROOT` must be writable by that
 user on the host (`chown 1000 /mnt/albums`); photos are mounted read-only.
